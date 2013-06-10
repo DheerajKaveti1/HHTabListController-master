@@ -771,6 +771,9 @@ static BOOL OSVersion6OrAbove = NO;
 
 #pragma mark -
 #pragma mark <UITableViewDataSource>
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Menu";
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
