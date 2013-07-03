@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "HHTabListController.h"
 @interface HH2ViewController : UITableViewController
-
+@property (strong, nonatomic) NSFetchedResultsController  *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext_;
 @end

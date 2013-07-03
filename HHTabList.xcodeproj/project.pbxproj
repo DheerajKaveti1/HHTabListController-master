@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490A742B17838FAE00C28787 /* HHGoogleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A742A17838FAE00C28787 /* HHGoogleParser.m */; };
+		490A742E178394E300C28787 /* TeluguVahini.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 490A742C178394E300C28787 /* TeluguVahini.xcdatamodeld */; };
+		490A74301783954400C28787 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490A742F1783954400C28787 /* CoreData.framework */; };
+		490A74341783B01600C28787 /* HH3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A74311783B01600C28787 /* HH3ViewController.m */; };
+		490A74351783B01600C28787 /* HH3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490A74321783B01600C28787 /* HH3ViewController.xib */; };
+		490A74391783DDA900C28787 /* HHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A74371783DDA900C28787 /* HHWebViewController.m */; };
+		490A743A1783DDA900C28787 /* HHWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490A74381783DDA900C28787 /* HHWebViewController.xib */; };
 		8F150F6115B15E4300EE1B9C /* HHTabListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F150F6015B15E4300EE1B9C /* HHTabListContainerView.m */; };
 		8F150F6715B15ED600EE1B9C /* HHTabListTabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F150F6615B15ED600EE1B9C /* HHTabListTabsView.m */; };
 		8F61E4C615A19F6700C0DBF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F61E4C515A19F6700C0DBF0 /* UIKit.framework */; };
@@ -29,11 +36,19 @@
 		BDBEB9AF17665071002BE7BB /* HH1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBEB9AD17665071002BE7BB /* HH1ViewController.xib */; };
 		BDBEB9B317665086002BE7BB /* HH2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBEB9B117665086002BE7BB /* HH2ViewController.m */; };
 		BDBEB9B417665086002BE7BB /* HH2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBEB9B217665086002BE7BB /* HH2ViewController.xib */; };
-		BDBEB9B81766528B002BE7BB /* HH3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBEB9B61766528A002BE7BB /* HH3ViewController.m */; };
-		BDBEB9B91766528B002BE7BB /* HH3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBEB9B71766528A002BE7BB /* HH3ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490A742917838FAE00C28787 /* HHGoogleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHGoogleParser.h; sourceTree = "<group>"; };
+		490A742A17838FAE00C28787 /* HHGoogleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHGoogleParser.m; sourceTree = "<group>"; };
+		490A742D178394E300C28787 /* TeluguVahini.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeluguVahini.xcdatamodel; sourceTree = "<group>"; };
+		490A742F1783954400C28787 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		490A74311783B01600C28787 /* HH3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HH3ViewController.m; path = HHTabList/HH3ViewController.m; sourceTree = "<group>"; };
+		490A74321783B01600C28787 /* HH3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HH3ViewController.xib; path = HHTabList/HH3ViewController.xib; sourceTree = "<group>"; };
+		490A74331783B01600C28787 /* HH3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HH3ViewController.h; path = HHTabList/HH3ViewController.h; sourceTree = "<group>"; };
+		490A74361783DDA900C28787 /* HHWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHWebViewController.h; sourceTree = "<group>"; };
+		490A74371783DDA900C28787 /* HHWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHWebViewController.m; sourceTree = "<group>"; };
+		490A74381783DDA900C28787 /* HHWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHWebViewController.xib; sourceTree = "<group>"; };
 		8F150F5F15B15E4300EE1B9C /* HHTabListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTabListContainerView.h; sourceTree = "<group>"; };
 		8F150F6015B15E4300EE1B9C /* HHTabListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTabListContainerView.m; sourceTree = "<group>"; };
 		8F150F6515B15ED600EE1B9C /* HHTabListTabsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTabListTabsView.h; sourceTree = "<group>"; };
@@ -68,9 +83,6 @@
 		BDBEB9B017665086002BE7BB /* HH2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HH2ViewController.h; sourceTree = "<group>"; };
 		BDBEB9B117665086002BE7BB /* HH2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HH2ViewController.m; sourceTree = "<group>"; };
 		BDBEB9B217665086002BE7BB /* HH2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HH2ViewController.xib; sourceTree = "<group>"; };
-		BDBEB9B51766528A002BE7BB /* HH3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HH3ViewController.h; sourceTree = "<group>"; };
-		BDBEB9B61766528A002BE7BB /* HH3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HH3ViewController.m; sourceTree = "<group>"; };
-		BDBEB9B71766528A002BE7BB /* HH3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HH3ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 				8F61E4C615A19F6700C0DBF0 /* UIKit.framework in Frameworks */,
 				8F61E4C815A19F6700C0DBF0 /* Foundation.framework in Frameworks */,
 				8F61E4CA15A19F6700C0DBF0 /* CoreGraphics.framework in Frameworks */,
+				490A74301783954400C28787 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,9 +145,11 @@
 		8F61E4C415A19F6700C0DBF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				490A742F1783954400C28787 /* CoreData.framework */,
 				8F61E4C515A19F6700C0DBF0 /* UIKit.framework */,
 				8F61E4C715A19F6700C0DBF0 /* Foundation.framework */,
 				8F61E4C915A19F6700C0DBF0 /* CoreGraphics.framework */,
+				490A742C178394E300C28787 /* TeluguVahini.xcdatamodeld */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -185,12 +200,17 @@
 				BDBEB9AB17665071002BE7BB /* HH1ViewController.h */,
 				BDBEB9AC17665071002BE7BB /* HH1ViewController.m */,
 				BDBEB9AD17665071002BE7BB /* HH1ViewController.xib */,
+				490A74331783B01600C28787 /* HH3ViewController.h */,
+				490A74311783B01600C28787 /* HH3ViewController.m */,
+				490A74321783B01600C28787 /* HH3ViewController.xib */,
 				BDBEB9B017665086002BE7BB /* HH2ViewController.h */,
-				BDBEB9B51766528A002BE7BB /* HH3ViewController.h */,
-				BDBEB9B61766528A002BE7BB /* HH3ViewController.m */,
-				BDBEB9B71766528A002BE7BB /* HH3ViewController.xib */,
 				BDBEB9B117665086002BE7BB /* HH2ViewController.m */,
 				BDBEB9B217665086002BE7BB /* HH2ViewController.xib */,
+				490A742917838FAE00C28787 /* HHGoogleParser.h */,
+				490A742A17838FAE00C28787 /* HHGoogleParser.m */,
+				490A74361783DDA900C28787 /* HHWebViewController.h */,
+				490A74371783DDA900C28787 /* HHWebViewController.m */,
+				490A74381783DDA900C28787 /* HHWebViewController.xib */,
 				8F150F6415B15E6C00EE1B9C /* XIBs */,
 			);
 			name = "Demo App";
@@ -258,7 +278,8 @@
 				8FE57C2C1740116300718EFE /* Default-568h@2x.png in Resources */,
 				BDBEB9AF17665071002BE7BB /* HH1ViewController.xib in Resources */,
 				BDBEB9B417665086002BE7BB /* HH2ViewController.xib in Resources */,
-				BDBEB9B91766528B002BE7BB /* HH3ViewController.xib in Resources */,
+				490A74351783B01600C28787 /* HH3ViewController.xib in Resources */,
+				490A743A1783DDA900C28787 /* HHWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +299,10 @@
 				8FE57C28173FD40E00718EFE /* main.m in Sources */,
 				BDBEB9AE17665071002BE7BB /* HH1ViewController.m in Sources */,
 				BDBEB9B317665086002BE7BB /* HH2ViewController.m in Sources */,
-				BDBEB9B81766528B002BE7BB /* HH3ViewController.m in Sources */,
+				490A742B17838FAE00C28787 /* HHGoogleParser.m in Sources */,
+				490A742E178394E300C28787 /* TeluguVahini.xcdatamodeld in Sources */,
+				490A74341783B01600C28787 /* HH3ViewController.m in Sources */,
+				490A74391783DDA900C28787 /* HHWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +425,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		490A742C178394E300C28787 /* TeluguVahini.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				490A742D178394E300C28787 /* TeluguVahini.xcdatamodel */,
+			);
+			currentVersion = 490A742D178394E300C28787 /* TeluguVahini.xcdatamodel */;
+			path = TeluguVahini.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F61E4B815A19F6700C0DBF0 /* Project object */;
 }

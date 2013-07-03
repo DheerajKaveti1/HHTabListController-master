@@ -1,22 +1,24 @@
 //
-//  HH2ViewController.m
+//  HH3ViewController.m
 //  HHTabList
 //
 //  Created by Dheeraj Kaveti on 6/10/13.
 //  Copyright (c) 2013 Houdah Software. All rights reserved.
 //
 
-#import "HH2ViewController.h"
+#import "HH3ViewController.h"
+#import "HHGoogleParser.h"
 #import "HHWebViewController.h"
-@interface HH2ViewController ()
+@interface HH3ViewController ()
 
 @end
 
-@implementation HH2ViewController
+@implementation HH3ViewController
+@synthesize events,managedObjectContext_,fetchedResultsController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
+    self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         // Custom initialization
     }
@@ -26,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self fillArrays];
+    UIBarButtonItem *chkmanuaaly = [[UIBarButtonItem alloc]initWithTitle:@"Ref" style:UIBarButtonItemStyleBordered target:self action:@selector(nextview)];
+    self.navigationItem.rightBarButtonItem=chkmanuaaly;
+
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,16 +40,34 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-- (void)viewWillAppear:(BOOL)animated
+-(void)nextview{
+    [self deleteEvents];
+    HHGoogleParser *vC =[[HHGoogleParser alloc]init];
+    vC.managedObjectContext_=self.managedObjectContext_;
+    [vC parsingXml ];
+    [self fillArrays];
+    [self.tableView reloadData];
+}
+-(void)deleteEvents{
+    
+    [self deleteEntity:@"Movies"];
+    
+}
+-(void)deleteEntity:(NSString *)EntityName
 {
-	[super viewWillAppear:animated];
-	
-	if ([self isMovingToParentViewController]) {
-		HHTabListController *tabListController = [self tabListController];
-		UIBarButtonItem *leftBarButtonItem = tabListController.revealTabListBarButtonItem;
-		
-		self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-	}
+    NSArray *deleting = [[NSArray alloc] init];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:EntityName inManagedObjectContext:self.managedObjectContext_]];
+    [fetchRequest setFetchBatchSize:50];
+    
+    NSError *error;
+    
+    deleting = [managedObjectContext_ executeFetchRequest:fetchRequest error:&error];
+    
+    for (NSManagedObject *ent in deleting) {
+        [managedObjectContext_ deleteObject:ent];
+    }
 }
 
 
@@ -58,14 +83,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return [events count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,6 +102,10 @@
     }
     
     // Configure the cell...
+    NSManagedObject *mObject = [events objectAtIndex:indexPath.section];
+
+    NSArray* foo =[[mObject valueForKey:@"descriptionn"] componentsSeparatedByString: @","];
+    cell.textLabel.text=[[foo objectAtIndex:1]stringByReplacingOccurrencesOfString:@"title:" withString:@""];
     
     return cell;
 }
@@ -124,7 +153,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    HHWebViewController *viewController =[HHWebViewController alloc];
+    NSManagedObject *mObject = [events objectAtIndex:indexPath.section];
+    
+    NSArray* foo =[[mObject valueForKey:@"descriptionn"] componentsSeparatedByString: @","];
+    viewController.webLink=[[foo objectAtIndex:0]stringByReplacingOccurrencesOfString:@"link:" withString:@""];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
-
+- (void) fillArrays {
+    
+    events = [[NSArray alloc] init];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init ];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Movies" inManagedObjectContext:managedObjectContext_]];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"descriptionn" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSError *error;
+    
+    self.events = [managedObjectContext_ executeFetchRequest:fetchRequest error:&error];
+    
+}
 @end
