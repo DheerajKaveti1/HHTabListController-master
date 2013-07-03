@@ -158,8 +158,11 @@
     
     NSArray* foo =[[mObject valueForKey:@"descriptionn"] componentsSeparatedByString: @","];
     viewController.webLink=[[foo objectAtIndex:0]stringByReplacingOccurrencesOfString:@"link:" withString:@""];
-    [self.navigationController pushViewController:viewController animated:YES];
+     viewController.webLink=[viewController.webLink stringByReplacingOccurrencesOfString:@" " withString:@""];
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:viewController.webLink]];
+   //[self.navigationController pushViewController:viewController animated:YES];
 }
+
 - (void) fillArrays {
     
     events = [[NSArray alloc] init];

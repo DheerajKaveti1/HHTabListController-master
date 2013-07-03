@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "DAPagesContainer.h"
 
 @interface HH1ViewController : UIViewController
 @property (strong, nonatomic) NSFetchedResultsController  *fetchedResultsController;

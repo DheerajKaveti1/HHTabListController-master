@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HHWebViewController : UIViewController
+@interface HHWebViewController : UIViewController<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *moviewebView;
 @property (nonatomic,strong) NSString *webLink;
 @end

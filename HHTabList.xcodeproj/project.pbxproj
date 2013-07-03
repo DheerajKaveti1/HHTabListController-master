@@ -36,6 +36,10 @@
 		BDBEB9AF17665071002BE7BB /* HH1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBEB9AD17665071002BE7BB /* HH1ViewController.xib */; };
 		BDBEB9B317665086002BE7BB /* HH2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBEB9B117665086002BE7BB /* HH2ViewController.m */; };
 		BDBEB9B417665086002BE7BB /* HH2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBEB9B217665086002BE7BB /* HH2ViewController.xib */; };
+		BDDCADC41783E32700EB757D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDCADC31783E32700EB757D /* MediaPlayer.framework */; };
+		BDDCADCC1783FAEE00EB757D /* DAPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDCADC71783FAEE00EB757D /* DAPageIndicatorView.m */; };
+		BDDCADCD1783FAEE00EB757D /* DAPagesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDCADC91783FAEE00EB757D /* DAPagesContainer.m */; };
+		BDDCADCE1783FAEE00EB757D /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDCADCB1783FAEE00EB757D /* DAPagesContainerTopBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,13 @@
 		BDBEB9B017665086002BE7BB /* HH2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HH2ViewController.h; sourceTree = "<group>"; };
 		BDBEB9B117665086002BE7BB /* HH2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HH2ViewController.m; sourceTree = "<group>"; };
 		BDBEB9B217665086002BE7BB /* HH2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HH2ViewController.xib; sourceTree = "<group>"; };
+		BDDCADC31783E32700EB757D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		BDDCADC61783FAEE00EB757D /* DAPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPageIndicatorView.h; sourceTree = "<group>"; };
+		BDDCADC71783FAEE00EB757D /* DAPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPageIndicatorView.m; sourceTree = "<group>"; };
+		BDDCADC81783FAEE00EB757D /* DAPagesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainer.h; sourceTree = "<group>"; };
+		BDDCADC91783FAEE00EB757D /* DAPagesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainer.m; sourceTree = "<group>"; };
+		BDDCADCA1783FAEE00EB757D /* DAPagesContainerTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainerTopBar.h; sourceTree = "<group>"; };
+		BDDCADCB1783FAEE00EB757D /* DAPagesContainerTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainerTopBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDCADC41783E32700EB757D /* MediaPlayer.framework in Frameworks */,
 				8F61E4C615A19F6700C0DBF0 /* UIKit.framework in Frameworks */,
 				8F61E4C815A19F6700C0DBF0 /* Foundation.framework in Frameworks */,
 				8F61E4CA15A19F6700C0DBF0 /* CoreGraphics.framework in Frameworks */,
@@ -127,6 +139,7 @@
 		8F61E4B615A19F6700C0DBF0 = {
 			isa = PBXGroup;
 			children = (
+				BDDCADC31783E32700EB757D /* MediaPlayer.framework */,
 				8FE57C18173FD39200718EFE /* Demo App */,
 				8F61E4CB15A19F6700C0DBF0 /* HHTabList */,
 				8F61E4C415A19F6700C0DBF0 /* Frameworks */,
@@ -192,9 +205,9 @@
 		8FE57C18173FD39200718EFE /* Demo App */ = {
 			isa = PBXGroup;
 			children = (
+				BDDCADC51783FAEE00EB757D /* DAPagesContainer */,
 				8FE57C19173FD3AD00718EFE /* AppDelegate.h */,
 				8FE57C1A173FD3AD00718EFE /* AppDelegate.m */,
-				8F61E4CC15A19F6700C0DBF0 /* Supporting Files */,
 				8FE57C25173FD40000718EFE /* ViewController.h */,
 				8FE57C26173FD40000718EFE /* ViewController.m */,
 				BDBEB9AB17665071002BE7BB /* HH1ViewController.h */,
@@ -211,9 +224,24 @@
 				490A74361783DDA900C28787 /* HHWebViewController.h */,
 				490A74371783DDA900C28787 /* HHWebViewController.m */,
 				490A74381783DDA900C28787 /* HHWebViewController.xib */,
+				8F61E4CC15A19F6700C0DBF0 /* Supporting Files */,
 				8F150F6415B15E6C00EE1B9C /* XIBs */,
 			);
 			name = "Demo App";
+			sourceTree = "<group>";
+		};
+		BDDCADC51783FAEE00EB757D /* DAPagesContainer */ = {
+			isa = PBXGroup;
+			children = (
+				BDDCADC61783FAEE00EB757D /* DAPageIndicatorView.h */,
+				BDDCADC71783FAEE00EB757D /* DAPageIndicatorView.m */,
+				BDDCADC81783FAEE00EB757D /* DAPagesContainer.h */,
+				BDDCADC91783FAEE00EB757D /* DAPagesContainer.m */,
+				BDDCADCA1783FAEE00EB757D /* DAPagesContainerTopBar.h */,
+				BDDCADCB1783FAEE00EB757D /* DAPagesContainerTopBar.m */,
+			);
+			name = DAPagesContainer;
+			path = HHTabList/DAPagesContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +331,9 @@
 				490A742E178394E300C28787 /* TeluguVahini.xcdatamodeld in Sources */,
 				490A74341783B01600C28787 /* HH3ViewController.m in Sources */,
 				490A74391783DDA900C28787 /* HHWebViewController.m in Sources */,
+				BDDCADCC1783FAEE00EB757D /* DAPageIndicatorView.m in Sources */,
+				BDDCADCD1783FAEE00EB757D /* DAPagesContainer.m in Sources */,
+				BDDCADCE1783FAEE00EB757D /* DAPagesContainerTopBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
