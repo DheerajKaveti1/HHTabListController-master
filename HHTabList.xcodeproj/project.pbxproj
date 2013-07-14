@@ -56,6 +56,10 @@
 		8FE57C2C1740116300718EFE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE57C2B1740116300718EFE /* Default-568h@2x.png */; };
 		BDBEB9B317665086002BE7BB /* HH2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBEB9B117665086002BE7BB /* HH2ViewController.m */; };
 		BDBEB9B417665086002BE7BB /* HH2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBEB9B217665086002BE7BB /* HH2ViewController.xib */; };
+		BDDCADC41783E32700EB757D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDCADC31783E32700EB757D /* MediaPlayer.framework */; };
+		BDDCADCC1783FAEE00EB757D /* DAPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDCADC71783FAEE00EB757D /* DAPageIndicatorView.m */; };
+		BDDCADCD1783FAEE00EB757D /* DAPagesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDCADC91783FAEE00EB757D /* DAPagesContainer.m */; };
+		BDDCADCE1783FAEE00EB757D /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDCADCB1783FAEE00EB757D /* DAPagesContainerTopBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +144,13 @@
 		BDBEB9B017665086002BE7BB /* HH2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HH2ViewController.h; sourceTree = "<group>"; };
 		BDBEB9B117665086002BE7BB /* HH2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HH2ViewController.m; sourceTree = "<group>"; };
 		BDBEB9B217665086002BE7BB /* HH2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HH2ViewController.xib; sourceTree = "<group>"; };
+		BDDCADC31783E32700EB757D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		BDDCADC61783FAEE00EB757D /* DAPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPageIndicatorView.h; sourceTree = "<group>"; };
+		BDDCADC71783FAEE00EB757D /* DAPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPageIndicatorView.m; sourceTree = "<group>"; };
+		BDDCADC81783FAEE00EB757D /* DAPagesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainer.h; sourceTree = "<group>"; };
+		BDDCADC91783FAEE00EB757D /* DAPagesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainer.m; sourceTree = "<group>"; };
+		BDDCADCA1783FAEE00EB757D /* DAPagesContainerTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainerTopBar.h; sourceTree = "<group>"; };
+		BDDCADCB1783FAEE00EB757D /* DAPagesContainerTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainerTopBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDCADC41783E32700EB757D /* MediaPlayer.framework in Frameworks */,
 				8F61E4C615A19F6700C0DBF0 /* UIKit.framework in Frameworks */,
 				8F61E4C815A19F6700C0DBF0 /* Foundation.framework in Frameworks */,
 				8F61E4CA15A19F6700C0DBF0 /* CoreGraphics.framework in Frameworks */,
@@ -247,6 +259,7 @@
 		8F61E4B615A19F6700C0DBF0 = {
 			isa = PBXGroup;
 			children = (
+				BDDCADC31783E32700EB757D /* MediaPlayer.framework */,
 				8FE57C18173FD39200718EFE /* Demo App */,
 				8F61E4CB15A19F6700C0DBF0 /* HHTabList */,
 				8F61E4CC15A19F6700C0DBF0 /* Supporting Files */,
@@ -319,18 +332,52 @@
 		8FE57C18173FD39200718EFE /* Demo App */ = {
 			isa = PBXGroup;
 			children = (
+				BDDCADC51783FAEE00EB757D /* DAPagesContainer */,
 				8FE57C19173FD3AD00718EFE /* AppDelegate.h */,
 				491EA2E9179350760031E513 /* Smiley.png */,
 				8FE57C1A173FD3AD00718EFE /* AppDelegate.m */,
 				8FE57C25173FD40000718EFE /* ViewController.h */,
 				8FE57C26173FD40000718EFE /* ViewController.m */,
+<<<<<<< HEAD
 				8FE57C1F173FD3F300718EFE /* ViewController.xib */,
 				491EA2C2179248BE0031E513 /* AFNetworking */,
 				491EA287179203B40031E513 /* New Group */,
 				491EA2851792036D0031E513 /* VideosList */,
 				491EA286179203860031E513 /* SelectedVideos */,
+=======
+				BDBEB9AB17665071002BE7BB /* HH1ViewController.h */,
+				BDBEB9AC17665071002BE7BB /* HH1ViewController.m */,
+				BDBEB9AD17665071002BE7BB /* HH1ViewController.xib */,
+				490A74331783B01600C28787 /* HH3ViewController.h */,
+				490A74311783B01600C28787 /* HH3ViewController.m */,
+				490A74321783B01600C28787 /* HH3ViewController.xib */,
+				BDBEB9B017665086002BE7BB /* HH2ViewController.h */,
+				BDBEB9B117665086002BE7BB /* HH2ViewController.m */,
+				BDBEB9B217665086002BE7BB /* HH2ViewController.xib */,
+				490A742917838FAE00C28787 /* HHGoogleParser.h */,
+				490A742A17838FAE00C28787 /* HHGoogleParser.m */,
+				490A74361783DDA900C28787 /* HHWebViewController.h */,
+				490A74371783DDA900C28787 /* HHWebViewController.m */,
+				490A74381783DDA900C28787 /* HHWebViewController.xib */,
+				8F61E4CC15A19F6700C0DBF0 /* Supporting Files */,
+				8F150F6415B15E6C00EE1B9C /* XIBs */,
+>>>>>>> 9d9b89e043e5b8a9c347c33c1598975d70911632
 			);
 			name = "Demo App";
+			sourceTree = "<group>";
+		};
+		BDDCADC51783FAEE00EB757D /* DAPagesContainer */ = {
+			isa = PBXGroup;
+			children = (
+				BDDCADC61783FAEE00EB757D /* DAPageIndicatorView.h */,
+				BDDCADC71783FAEE00EB757D /* DAPageIndicatorView.m */,
+				BDDCADC81783FAEE00EB757D /* DAPagesContainer.h */,
+				BDDCADC91783FAEE00EB757D /* DAPagesContainer.m */,
+				BDDCADCA1783FAEE00EB757D /* DAPagesContainerTopBar.h */,
+				BDDCADCB1783FAEE00EB757D /* DAPagesContainerTopBar.m */,
+			);
+			name = DAPagesContainer;
+			path = HHTabList/DAPagesContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +470,7 @@
 				490A742E178394E300C28787 /* TeluguVahini.xcdatamodeld in Sources */,
 				490A74341783B01600C28787 /* HH3ViewController.m in Sources */,
 				490A74391783DDA900C28787 /* HHWebViewController.m in Sources */,
+<<<<<<< HEAD
 				491EA2831791F1200031E513 /* HH1ViewController.m in Sources */,
 				491EA28B179203E70031E513 /* HHVideosListViewController.m in Sources */,
 				491EA28F1792245C0031E513 /* VideosData.m in Sources */,
@@ -440,6 +488,11 @@
 				491EA2DE179248BE0031E513 /* UIImageView+AFNetworking.m in Sources */,
 				491EA2E1179249B80031E513 /* VideosCell.m in Sources */,
 				491EA2E717924C7A0031E513 /* HHChannelVideosViewController.m in Sources */,
+=======
+				BDDCADCC1783FAEE00EB757D /* DAPageIndicatorView.m in Sources */,
+				BDDCADCD1783FAEE00EB757D /* DAPagesContainer.m in Sources */,
+				BDDCADCE1783FAEE00EB757D /* DAPagesContainerTopBar.m in Sources */,
+>>>>>>> 9d9b89e043e5b8a9c347c33c1598975d70911632
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

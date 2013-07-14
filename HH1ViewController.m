@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
     if (![self updateEvents]) {
         [self deleteEvents];
         for (NSString *titles in self.videoChannelList) {
@@ -41,6 +42,10 @@
   
 
    
+=======
+    // Do any additional setup after loading the view from its nib.
+    
+>>>>>>> 9d9b89e043e5b8a9c347c33c1598975d70911632
 }
 
 
