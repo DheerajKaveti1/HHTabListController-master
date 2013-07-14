@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Movies" syncable="YES">
+    <entity name="LastUpdated" syncable="YES">
+        <attribute name="lastupdated" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Movies" representedClassName="Movies" syncable="YES">
         <attribute name="descriptionn" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="VideoDetails" representedClassName="VideoDetails" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="nameRelationship" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="VideoName" inverseName="detailsrelationship" inverseEntity="VideoName" syncable="YES"/>
+    </entity>
+    <entity name="VideoName" representedClassName="VideoName" syncable="YES">
+        <attribute name="channelName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="detailsrelationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="VideoDetails" inverseName="nameRelationship" inverseEntity="VideoDetails" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Movies" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="Movies" positionX="160" positionY="192" width="128" height="58"/>
+        <element name="VideoName" positionX="522" positionY="-42" width="128" height="73"/>
+        <element name="VideoDetails" positionX="837" positionY="-45" width="128" height="103"/>
+        <element name="LastUpdated" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>

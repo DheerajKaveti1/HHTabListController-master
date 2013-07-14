@@ -1,18 +1,22 @@
 //
-//  HH2ViewController.m
+//  HHChannelVideosViewController.m
 //  HHTabList
 //
-//  Created by Dheeraj Kaveti on 6/10/13.
+//  Created by Dheeraj Kaveti on 7/13/13.
 //  Copyright (c) 2013 Houdah Software. All rights reserved.
 //
 
-#import "HH2ViewController.h"
+#import "HHChannelVideosViewController.h"
+#import "VideosCell.h"
+#import "VideosData.h"
 #import "HHWebViewController.h"
-@interface HH2ViewController ()
+
+@interface HHChannelVideosViewController ()
 
 @end
 
-@implementation HH2ViewController
+@implementation HHChannelVideosViewController
+@synthesize channelName,managedObjectContext,videosList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self ReloadVideosData];
+    NSLog(@"%@",self.videosList);
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,18 +39,23 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-- (void)viewWillAppear:(BOOL)animated
+-(void)ReloadVideosData
 {
-	[super viewWillAppear:animated];
-	
-	if ([self isMovingToParentViewController]) {
-		HHTabListController *tabListController = [self tabListController];
-		UIBarButtonItem *leftBarButtonItem = tabListController.revealTabListBarButtonItem;
-		
-		self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-	}
+    
+    self.videosList = [[NSArray alloc] init];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init ];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"VideoDetails" inManagedObjectContext:managedObjectContext]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY nameRelationship.channelName like %@",self.channelName ];
+    [fetchRequest setPredicate:predicate];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSError *error;
+    
+    self.videosList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -56,29 +67,48 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return [self.videosList count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"videoCell";
+    VideosCell *cell =nil;
+    
+    cell = (VideosCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell==nil )
+    {
+        NSArray *topLevelObjects =[[NSBundle mainBundle]loadNibNamed:@"VideoCell" owner:nil options:nil ];
+        for(id currentObject in topLevelObjects)
+        {
+            if ([currentObject isKindOfClass:[VideosCell class]])
+            {
+				cell =  (VideosCell *) currentObject;
+				break;
+			}
+            
+        }
     }
-    
-    // Configure the cell...
-    
+        NSManagedObject *mObject = [videosList objectAtIndex:indexPath.section];
+    NSLog(@"%@",[mObject valueForKey:@"link"]);
+    cell.nameLabel.numberOfLines=3;
+    cell.nameLabel.text=[mObject valueForKey:@"title"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",[mObject valueForKey:@"image"]] ];
+    [cell.ratingImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Smiley.png"]];
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  70;
 }
 
 /*
@@ -124,7 +154,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    HHWebViewController *web =[[HHWebViewController alloc]init];
+    NSManagedObject *mObject = [videosList objectAtIndex:indexPath.section];
+    NSLog(@"%@",[mObject valueForKey:@"link"]);
+    [web setWebLink:[mObject valueForKey:@"link"]];
+    [self.navigationController pushViewController:web animated:YES];
 }
 
 @end

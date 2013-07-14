@@ -50,21 +50,22 @@
 //	NSArray *titles = [NSArray arrayWithObjects:@"Messages", @"Patitent List ", @"Settings", nil];
 	NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:3];
     for (int i=0; i<3; i++) {
-        if (i==0) {
+        if (i==1) {
             UIViewController *viewController = [[ViewController alloc] init];
             
-            [viewController setTitle:@"Messages"];
+            [viewController setTitle:@"Videos"];
             
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
             
             [viewControllers addObject:navigationController];
             
         }
-        else if(i==1)
+        else if(i==0)
         {
             HH1ViewController *viewController = [[HH1ViewController alloc] init];
+            viewController.managedObjectContext_=self.managedObjectContext;
             
-            [viewController setTitle: @"Patitent List"];
+            [viewController setTitle: @"Videos List"];
             
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
             

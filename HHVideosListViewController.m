@@ -1,18 +1,18 @@
 //
-//  HH2ViewController.m
+//  HHVideosListViewController.m
 //  HHTabList
 //
-//  Created by Dheeraj Kaveti on 6/10/13.
+//  Created by Dheeraj Kaveti on 7/13/13.
 //  Copyright (c) 2013 Houdah Software. All rights reserved.
 //
 
-#import "HH2ViewController.h"
-#import "HHWebViewController.h"
-@interface HH2ViewController ()
+#import "HHVideosListViewController.h"
+
+@interface HHVideosListViewController ()
 
 @end
 
-@implementation HH2ViewController
+@implementation HHVideosListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,18 +33,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-	
-	if ([self isMovingToParentViewController]) {
-		HHTabListController *tabListController = [self tabListController];
-		UIBarButtonItem *leftBarButtonItem = tabListController.revealTabListBarButtonItem;
-		
-		self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-	}
-}
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -124,7 +112,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end
